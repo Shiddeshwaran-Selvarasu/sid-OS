@@ -12,9 +12,9 @@ THREAD_COUNT=16 # parallel jobs count modify according to your system
 all: build_kernel
 
 build_kernel: prep
-	make -j $(THREAD_COUNT) -C $(DIR)
+	make -j $(THREAD_COUNT) -C $(DIR) ARCH=$(ARCH)
 	cp -v $(DIR)/arch/$(ARCH)/boot/$(IMAGE) $(EXPORTDIR)/
-EXPORTDIR
+
 prep:
 	@sudo mkdir -p $(EXPORTDIR);
 	@if [ ! -d $(DIR) ]; then \
@@ -31,6 +31,10 @@ subdir:
 	sudo tar xf $(TARBALL)
 	sudo patch -p1 -d $(DIR) < patchfile
 	sudo cp -a patchfile $(MARKER)
+
+update_config:
+	mv $(KERNEL_CONFIG) ./kernel-config.old 
+	cp $(DIR)/.config $(KERNEL_CONFIG)
 
 allclean: clean
 clean:
