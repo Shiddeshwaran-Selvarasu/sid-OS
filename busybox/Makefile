@@ -1,6 +1,6 @@
 TARBALLS:=../tarballs
 PWD:=$(shell pwd)
-KERNEL_FILE:=linux-6.8.7.tar.xz
+KERNEL_FILE:=busybox-1.36.1.tar.bz2
 KERNEL_TAR_PATH=$(TARBALLS)/$(KERNEL_FILE)
 DIR:=$(PWD)/linux
 EXPORTDIR:=../imagefiles
@@ -14,9 +14,8 @@ all: build_kernel
 build_kernel: prep
 	make -j $(THREAD_COUNT) -C $(DIR)
 	cp -v $(DIR)/arch/$(ARCH)/boot/$(IMAGE) $(EXPORTDIR)/
-EXPORTDIR
+
 prep:
-	@sudo mkdir -p $(EXPORTDIR);
 	@if [ ! -d $(DIR) ]; then \
 		mkdir -p $(DIR); \
 		tar xf $(KERNEL_TAR_PATH) -C $(DIR) --strip-components=1; \
