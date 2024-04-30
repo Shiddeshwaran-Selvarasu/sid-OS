@@ -7,15 +7,12 @@ all: dir getfiles
 tarballs: all
 
 getfiles:
-	cd $(TARBALLS); \
-     for url in $$(cat $(FILELIST)); do \
-        wget --timestamping "$$url"; \
-    done
+	wget --input-file=$(FILELIST) --continue --directory-prefix=$(TARBALLS)
 
 dir:
 	@sudo mkdir -p $(TARBALLS)
 	@sudo chmod 777 $(TARBALLS)
 
 allclean: clean
-clean:
+clean:cd 
 	@rm -rf $(TARBALLS)/*
