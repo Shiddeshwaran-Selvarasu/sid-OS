@@ -85,10 +85,3 @@ https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz
 https://github.com/tukaani-project/xz/releases/download/v5.4.6/xz-5.4.6.tar.xz
 https://zlib.net/fossils/zlib-1.3.1.tar.gz
 https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz
-https://www.linuxfromscratch.org/patches/lfs/12.1/bash-5.2.21-upstream_fixes-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/bzip2-1.0.8-install_docs-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/coreutils-9.4-i18n-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/glibc-2.39-fhs-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/kbd-2.6.4-backspace-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/readline-8.2-upstream_fixes-3.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/sysvinit-3.08-consolidated-1.patch
