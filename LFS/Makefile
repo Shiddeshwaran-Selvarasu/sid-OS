@@ -10,3 +10,5 @@ all: prep
 prep:
 	@./setup-base-structure.sh tarballs=$(TARBALLS) lfs=$(LFS) sources=$(SOURCES) md5sum=$(MD5SUMS)
 
+allclean:
+	@sudo rm -rf $(LFS)/*
