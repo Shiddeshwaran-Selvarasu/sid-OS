@@ -10,8 +10,9 @@ export_variables () {
     LFS_TGT=$(uname -m)-lfs-linux-gnu
     PATH=$LFS/tools/bin:$PATH
     CONFIG_SITE=$LFS/usr/share/config.site
+    MAKEFLAGS=-j$(nproc)
 
-    export LC_ALL LFS_TGT LFS PATH CONFIG_SITE
+    export LC_ALL LFS_TGT LFS PATH CONFIG_SITE MAKEFLAGS
 }
 
 start_build () {
