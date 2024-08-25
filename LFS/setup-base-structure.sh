@@ -99,5 +99,12 @@ if [ -z $TARBALLS ] \
     help
 fi
 
+if [ -z "$LFS" ]; then 
+    echo "LFS is set but empty"
+    exit 1 
+else 
+    echo "LFS is set to '$LFS'"
+fi
+
 # starting point
 start_build

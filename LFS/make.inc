@@ -1,0 +1,9 @@
+TARBALLS:=$(realpath ../tarballs)
+RAMDIR?=/ram
+LFS:=$(RAMDIR)/lfs
+SOURCES:=$(LFS)/sources
+BUILD_DIR=$(LFS)/build
+LC_ALL=POSIX
+LFS_TGT=$(shell uname -m)-lfs-linux-gnu
+CONFIG_SITE=$LFS/usr/share/config.site
+MAKEFLAGS=-j$(shell nproc)
