@@ -30,7 +30,7 @@ start_build () {
 	ln -sv usr/lib $LFS/lib
 	ln -sv usr/sbin $LFS/sbin
 
-	# Changes for 64-BIT based systems
+	# Changes for 64 bit based systems
     case $(uname -m) in 
         x86_64|aarch64) 
             mkdir -pv $LFS/lib64 
