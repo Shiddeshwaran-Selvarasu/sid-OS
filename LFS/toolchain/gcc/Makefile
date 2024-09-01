@@ -10,8 +10,7 @@ TMP_DIR=$(MODULE_PATH)/build
 all: untar prep build post_build
 
 post_build: build
-#   the $(LFS_TGT)-gcc path is getting created inside gcc/build instead of gcc need to fix it.... refer https://www.linuxfromscratch.org/lfs/view/stable/chapter05/gcc-pass1.html
-	@cd $(TMP_DIR) && cat gcc/limitx.h gcc/glimits.h gcc/limity.h > $(shell dirname $$($(LFS_TGT)-gcc -print-libgcc-file-name))/include/limits.h
+	@cd $(MODULE_PATH) && cat gcc/limitx.h gcc/glimits.h gcc/limity.h > $(shell dirname $$($(TOOLS)/bin/$(LFS_TGT)-gcc -print-libgcc-file-name))/include/limits.h
 
 build: prep
 	@cd $(TMP_DIR) && sudo ../configure  \
