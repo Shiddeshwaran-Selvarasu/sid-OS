@@ -1,3 +1,6 @@
+# refer the below link for detailed info what is done in this makefile and why 
+# https://www.linuxfromscratch.org/lfs/view/stable/chapter05/gcc-pass1.html
+
 include ../../make.inc
 
 SRC_FILE="gcc-13.2.0.tar.xz"
@@ -43,7 +46,8 @@ prep: untar
 			sed -e '/m64=/s/lib64/lib/' -i.orig $(MODULE_PATH)/gcc/config/i386/t-linux64 ;; \
 	esac
 
-untar:
+untar: clean
+	@echo "untaring source files..."
 	@mkdir -p $(BUILD_DIR) $(MODULE_PATH) $(MODULE_PATH)/mpfr $(MODULE_PATH)/gmp $(MODULE_PATH)/mpc
 	@tar -xf $(SOURCES)/$(SRC_FILE) -C $(MODULE_PATH) --strip-components=1
 #	extract dependecies 
@@ -52,3 +56,7 @@ untar:
 	@tar -xf $(SOURCES)/mpc-1.3.1.tar.gz -C $(MODULE_PATH)/mpc --strip-components=1
 
 	@mkdir -p $(TMP_DIR)
+
+clean: 
+	@echo "cleaning prev build files, if any..."
+	@sudo rm -rf $(MODULE_PATH)

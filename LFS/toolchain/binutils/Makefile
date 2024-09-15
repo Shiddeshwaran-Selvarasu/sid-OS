@@ -1,3 +1,6 @@
+# refer the below link for detailed info what is done in this makefile and why 
+# https://www.linuxfromscratch.org/lfs/view/stable/chapter05/binutils-pass1.html
+
 include ../../make.inc
 
 SRC_FILE="binutils-2.42.tar.xz"
@@ -21,10 +24,12 @@ build: untar
 	@cd $(TMP_DIR) && sudo make
 	@cd $(TMP_DIR) && sudo make install
 
-clean:
-	@rm -rf $(BUILD_DIR)
-
-untar:
+untar: clean
+	@echo "untaring source files..."
 	@mkdir -p $(BUILD_DIR) $(MODULE_PATH)
 	@tar -xf $(SOURCES)/$(SRC_FILE) -C $(MODULE_PATH) --strip-components=1
 	@mkdir -p $(TMP_DIR)
+
+clean: 
+	@echo "cleaning prev build files, if any..."
+	@sudo rm -rf $(MODULE_PATH)

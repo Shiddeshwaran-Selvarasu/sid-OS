@@ -1,30 +1,25 @@
-# include ../../make.inc
+# refer the below link for detailed info what is done in this makefile and why 
+# https://www.linuxfromscratch.org/lfs/view/stable/chapter05/linux-headers.html
 
-# SRC_FILE="binutils-2.42.tar.xz"
-# MODULE_NAME="binutils"
+include ../../make.inc
 
-# MODULE_PATH=$(BUILD_DIR)/$(MODULE_NAME)
+SRC_FILE="linux-6.8.7.tar.xz"
+MODULE_NAME="linux"
 
-# TMP_DIR=$(MODULE_PATH)/build
+MODULE_PATH=$(BUILD_DIR)/$(MODULE_NAME)
 
-# all: untar build
+all: untar build
 
-# build: untar
-# 	@cd $(TMP_DIR) && sudo ../configure		\
-# 	--prefix=$(LFS)/tools 				\
-# 	--with-sysroot=$(LFS) 				\
-# 	--target=$(LFS_TGT) 				\
-# 	--disable-nls --enable-gprofng=no 	\
-# 	--disable-werror 					\
-# 	--enable-default-hash-style=gnu
+build: untar
+	@cd $(MODULE_PATH) && sudo make mrproper && sudo make headers
+	@cd $(MODULE_PATH) && sudo find usr/include -type f ! -name '*.h' -delete
+	@cd $(MODULE_PATH) && sudo cp -rv usr/include $(LFS)/usr
 
-# 	@sudo make -C $(TMP_DIR)
-# 	@sudo make -C $(TMP_DIR) install
+clean: 
+	@echo "cleaning prev build files, if any..."
+	@sudo rm -rf $(MODULE_PATH)
 
-# clean:
-# 	@rm -rf $(BUILD_DIR)
-
-# untar:
-# 	@mkdir -p $(BUILD_DIR) $(MODULE_PATH)
-# 	@tar -xf $(SOURCES)/$(SRC_FILE) -C $(MODULE_PATH) --strip-components=1
-# 	@mkdir -p $(TMP_DIR)
+untar: clean
+	@echo "untaring source files..."
+	@mkdir -p $(BUILD_DIR) $(MODULE_PATH)
+	@tar -xf $(SOURCES)/$(SRC_FILE) -C $(MODULE_PATH) --strip-components=1

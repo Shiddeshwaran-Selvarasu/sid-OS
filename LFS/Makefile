@@ -10,7 +10,7 @@ build_toolchain:
 	sudo make -C $(TOOLCHAIN_DIR) all
 
 prep:
-	@./setup-base-structure.sh tarballs=$(TARBALLS) lfs=$(LFS) sources=$(SOURCES) md5sum=$(MD5SUMS)
+	@sudo ./setup-base-structure.sh tarballs=$(TARBALLS) lfs=$(LFS) sources=$(SOURCES) md5sum=$(MD5SUMS)
 
 allclean:
 	@sudo rm -rf $(LFS)

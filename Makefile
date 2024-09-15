@@ -1,4 +1,5 @@
-SUBDIRS = pull_tarballs linux busybox bootloader image-builder
+# SUBDIRS = pull_tarballs linux busybox bootloader image-builder
+SUBDIRS = pull_tarballs LFS
 RAMDIR?=/ram
 
 help:
