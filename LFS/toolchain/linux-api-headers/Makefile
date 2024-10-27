@@ -3,7 +3,7 @@
 
 include ../../make.inc
 
-SRC_FILE="linux-6.8.7.tar.xz"
+SRC_FILE="linux-6.10.5.tar.xz"
 MODULE_NAME="linux"
 
 MODULE_PATH=$(BUILD_DIR)/$(MODULE_NAME)

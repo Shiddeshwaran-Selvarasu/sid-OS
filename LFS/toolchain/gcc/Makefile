@@ -3,7 +3,7 @@
 
 include ../../make.inc
 
-SRC_FILE="gcc-13.2.0.tar.xz"
+SRC_FILE="gcc-14.2.0.tar.xz"
 MODULE_NAME="gcc"
 
 MODULE_PATH=$(BUILD_DIR)/$(MODULE_NAME)
@@ -19,7 +19,7 @@ build: prep
 	@cd $(TMP_DIR) && sudo ../configure  \
     --target=$(LFS_TGT)         \
     --prefix=$(LFS)/tools       \
-    --with-glibc-version=2.39   \
+    --with-glibc-version=2.40   \
     --with-sysroot=$(LFS)       \
     --with-newlib               \
     --without-headers           \

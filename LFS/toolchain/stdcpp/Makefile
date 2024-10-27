@@ -3,7 +3,7 @@
 
 include ../../make.inc
 
-SRC_FILE="gcc-13.2.0.tar.xz"
+SRC_FILE="gcc-14.2.0.tar.xz"
 MODULE_NAME="gcc-stdcpp"
 
 MODULE_PATH=$(BUILD_DIR)/$(MODULE_NAME)

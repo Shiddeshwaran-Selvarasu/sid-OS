@@ -3,9 +3,9 @@
 
 include ../../make.inc
 
-SRC_FILE="glibc-2.39.tar.xz"
+SRC_FILE="glibc-2.40.tar.xz"
 MODULE_NAME="glibc"
-MODULE_PATCH_PATH="glibc-2.39-fhs-1.patch"
+MODULE_PATCH_PATH="glibc-2.40-fhs-1.patch"
 
 MODULE_PATH=$(BUILD_DIR)/$(MODULE_NAME)
 
