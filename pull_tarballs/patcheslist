@@ -1,7 +1,7 @@
-https://www.linuxfromscratch.org/patches/lfs/12.1/bash-5.2.21-upstream_fixes-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/bzip2-1.0.8-install_docs-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/coreutils-9.4-i18n-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/glibc-2.39-fhs-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/kbd-2.6.4-backspace-1.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/readline-8.2-upstream_fixes-3.patch
-https://www.linuxfromscratch.org/patches/lfs/12.1/sysvinit-3.08-consolidated-1.patch
+https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz
+https://www.linuxfromscratch.org/patches/lfs/12.2/bzip2-1.0.8-install_docs-1.patch
+https://www.linuxfromscratch.org/patches/lfs/12.2/coreutils-9.5-i18n-2.patch
+https://www.linuxfromscratch.org/patches/lfs/12.2/expect-5.45.4-gcc14-1.patch
+https://www.linuxfromscratch.org/patches/lfs/12.2/glibc-2.40-fhs-1.patch
+https://www.linuxfromscratch.org/patches/lfs/12.2/kbd-2.6.4-backspace-1.patch
+https://www.linuxfromscratch.org/patches/lfs/12.2/sysvinit-3.10-consolidated-1.patch
